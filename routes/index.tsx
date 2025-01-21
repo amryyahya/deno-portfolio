@@ -38,14 +38,18 @@ function Hero() {
         <h1 class="text-4xl font-bold text-primary">
           <TypingAnimation
             strings={[
-              '"Hello, World!"',
-              "I'm a developer.",
+              '"Amry Yahya"',
+              "Software Developer",
+              "Devops Engineer",
             ]}
             autoStart={true}
           />
         </h1>
         <p class="text-xl mt-4">
-          I build web applications and websites using modern technologies.
+        Bachelor of <b>Informatics</b> from <b>University of Brawijaya</b>
+        </p>
+        <p class="text-xl mt-4">
+        <b>Google Cloud</b> Certified <b>Associate Cloud Engineer</b>
         </p>
       </div>
       <SpinningModel />
@@ -53,61 +57,6 @@ function Hero() {
   );
 }
 
-interface Value {
-  title: string;
-  description: string;
-  image: string;
-}
-
-function Values() {
-  const values: Value[] = [
-    {
-      title: "Passion for Continuous Learning",
-      description:
-        "I actively seek out new technologies and stay up-to-date with industry trends.",
-      image: "/img/pexels-pixabay-159711.webp",
-    },
-    {
-      title: "User-Centric Approach",
-      description:
-        "My goal is to create user-friendly applications that solve real-world problems.",
-      image: "/img/pexels-picjumbo-com-55570-196644.webp",
-    },
-    {
-      title: "Collaboration and Communication",
-      description:
-        "I excel in team environments and communicate effectively with stakeholders.",
-      image: "/img/pexels-fauxels-3184418.webp",
-    },
-  ];
-
-  return (
-    <>
-      <Wave flip={false} />
-      <section class="p-4 flex justify-center items-center gap-4 flex-wrap bg-primary">
-        {values.map((value, i) => (
-          <div
-            class={"card md:h-auto md:max-w-64 bg-base-100 flex-row md:flex-col shadow-lg" +
-              (i % 2 ? " md:-translate-y-8" : "")}
-          >
-            <figure class="w-1/3 md:h-48 md:w-auto rounded-none rounded-l-box md:rounded-none md:rounded-t-box">
-              <img
-                class="w-full h-full object-cover"
-                src={value.image}
-                alt={value.title}
-              />
-            </figure>
-            <div class="card-body w-2/3 md:w-auto">
-              <h2 class="card-title">{value.title}</h2>
-              <p>{value.description}</p>
-            </div>
-          </div>
-        ))}
-      </section>
-      <Wave flip={true} />
-    </>
-  );
-}
 
 interface Experience {
   title: string;
@@ -119,16 +68,16 @@ interface Experience {
 function Experience() {
   const experiences: Experience[] = [
     {
-      title: "Full Stack Web Developer",
-      company: "AST Advanced Sales Technologies GmbH",
-      timePeriod: "Sep 2023 - Apr 2024",
-      location: "Vienna, Austria",
+      title: "Cloud Computing Mentor",
+      company: "Bangkit Academy by Google, Tokopedia, Gojek, & Traveloka",
+      timePeriod: "February 2024 – July 2024",
+      location: "Remote",
     },
     {
-      title: "Junior Web Developer",
-      company: "AST Advanced Sales Technologies GmbH",
-      timePeriod: "Feb 2023 - Sep 2023",
-      location: "Vienna, Austria",
+      title: "Web Developer Intern",
+      company: "OKE Garden",
+      timePeriod: "October 2022 – December 2022",
+      location: "Remote",
     },
   ];
 
@@ -194,20 +143,28 @@ interface Project {
 function Projects() {
   const projects: Project[] = [
     {
-      title: "Denoland Fresh",
+      title: "Tamago",
       description:
-        "Fresh is a full stack modern web framework for JavaScript and TypeScript developers.",
-      link: "https://fresh.deno.dev/",
-      type: "Open Source",
-      icon: "logos:deno",
+        "A Pomodoro App with Extra Features",
+      link: "/",
+      type: "Personal Project",
+      icon: "logos:go",
     },
     {
-      title: "Dogr.",
+      title: "En Seiji",
       description:
-        "Dogr is a web application I developed to hone my skills in Nuxt and Vue.",
-      link: "https://dogr.vercel.app/",
-      type: "Personal",
-      icon: "logos:vue",
+        "A Personal Expense Tracker App",
+      link: "/",
+      type: "Personal Project",
+      icon: "logos:python",
+    },
+    {
+      title: "Medsafe Cycle",
+      description:
+        "A Medical Waste Classifier App",
+      link: "/",
+      type: "Bangkit Project",
+      icon: "logos:javascript",
     },
   ];
 
@@ -293,7 +250,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Values />
       <Projects />
       <Experience />
       <Technologies />
